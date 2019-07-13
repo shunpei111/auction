@@ -3,6 +3,10 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     # アイテムの中のidを見つけるfindメソッド
   end
+
+  def index
+    @items = Item.all
+  end
 end
 
 # urlの中のすうじ(id)を取り込むためにparams
