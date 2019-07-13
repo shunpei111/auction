@@ -1,0 +1,30 @@
+<h1>商品の登録フォーム</h1>
+<%= form_with model: @item, local: true do |form| %>
+<%# これから登録するモデル。@item,  %>
+<p>
+  商品名: <br>
+  <%= form.text_field :name %>
+</p>
+
+
+<p>
+  価格: <br>
+  <%= form.text_field :price%>
+</p>
+<p>
+  出品者: <br>
+  <%= form.text_field :seller %>
+</p>
+<p>
+  電子メール: <br>
+  <%= form.text_area :email %>
+</p>
+<p>
+  商品画像URL: <br>
+  <%= form.text_area :image_url %>
+</p>
+<%= form.submit "登録" %>
+
+  
+
+<% end %>
