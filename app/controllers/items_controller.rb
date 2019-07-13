@@ -20,7 +20,27 @@ class ItemsController < ApplicationController
     #redirect_toはメソッド、ここに飛ぶ.
   end
 
-  private 
+  def edit 
+    @item = Item.find(params[:id])
+  end
+  def update
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+    redirect_to @item
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to items_path 
+  end
+  # update、destory、editはまず値を取得しないといけない
+  
+  
+  
+  
+  private
+
   def item_params 
     params.require(:item).permit(:name, :price, :seller,
     :description, :email, :image_url)
